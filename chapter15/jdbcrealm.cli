@@ -10,8 +10,11 @@ connect
 
 # Add the JDBC security realm creation
 
-/subsystem=elytron/jdbc-realm=demoJdbcRealm:add(principal-query=[{sql="SELECT password,role FROM USERS WHERE login=?",data-source=MySQLPool,clear-password-mapper={password-index=1},attribute-mapping=[{index=2,to=groups}]}])
 
+#Define the JDBC Realm
+/subsystem=elytron/jdbc-realm=demoJdbcRealm:add(principal-query=[{sql="SELECT password,role FROM USERS WHERE login=?",data-source=PostgrePool,clear-password-mapper={password-index=1},attribute-mapping=[{index=2,to=groups}]}])
+
+#Define the Security Domain
 /subsystem=elytron/security-domain=jdbcSD:add(realms=[{realm=demoJdbcRealm,role-decoder=groups-to-roles}],default-realm=demoJdbcRealm,permission-mapper=default-permission-mapper)
 
 # Check first if you have already defined this role decoder with:
