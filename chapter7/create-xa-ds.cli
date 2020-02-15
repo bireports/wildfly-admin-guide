@@ -11,7 +11,7 @@ module add --name=org.postgres --resources=postgresql-42.2.5.jar --dependencies=
  
 /subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
 
-xa-data-source add --name=PostGresXA --jndi-name=java:/PostGresXA --driver-name=postgres --xa-datasource-class=org.postgresql.xa.PGXADataSource --user-name=postgres --password=postgres --xa-datasource-properties=[{ServerName=172.17.0.2}]
+xa-data-source add --name=PostGresXA --jndi-name=java:/PostGresXA --driver-name=postgres --xa-datasource-class=org.postgresql.xa.PGXADataSource --user-name=postgres --password=postgres --xa-datasource-properties=[{ServerName=localhost}]
 # Add additional properties 
 /subsystem=datasources/xa-data-source=PostGresXA/xa-datasource-properties=DatabaseName:add(value="postgres")
 
