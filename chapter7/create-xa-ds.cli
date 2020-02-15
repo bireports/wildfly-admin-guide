@@ -2,7 +2,7 @@
 # sudo docker run -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -d -p 5432:5432 postgres:11
 
 # Download the JDBC Driver
-# wget http://central.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar
+# wget https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar
 connect
 
 batch
